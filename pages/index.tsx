@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import { CiClock2 } from "react-icons/ci";
 import type { ReactElement } from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout.tsx";
 import type { NextPageWithLayout } from "./_app";
 
 export interface user {
