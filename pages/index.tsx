@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { CiClock2 } from "react-icons/ci";
-import Layout from "../components/layout";
+import Layout from "./components/layout";
 
 export interface user {
   name: string;
