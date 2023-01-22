@@ -26,7 +26,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="mx-[10%] w-fit p-6">
+      <div className="mx-[10%] w-fit p-6 ">
         <div className="flex px-5 mx-5">
           <CiClock2 className="text-white bg-[#b0d576] rounded-full text-bold text-[5rem]" />
         </div>
