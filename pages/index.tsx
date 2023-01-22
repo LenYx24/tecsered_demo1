@@ -1,11 +1,23 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import { useState, useEffect } from "react";
+import { CiClock2 } from "react-icons/ci";
 
-const inter = Inter({ subsets: ['latin'] })
-
+export interface user {
+  name: string;
+  age: number;
+  password: string;
+  email: string;
+}
 export default function Home() {
+  const [user, setUser] = useState<user | undefined>(undefined);
+  useEffect(() => {
+    const data = fetch("/api/hello").then((res) => console.log(res.json()));
+  });
+  const onClickHandler = () => {
+    if (user) {
+      console.log("hi");
+    } // ha be van jelentkezve akkor a recommended page, ha nem akkor bejelentkezés
+  };
   return (
     <>
       <Head>
@@ -14,110 +26,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
+      <div className="mx-[10%] w-fit p-6">
+        <div className="flex px-5 mx-5">
+          <CiClock2 className="text-white bg-[#b0d576] rounded-full text-bold text-[5rem]" />
+        </div>
+
+        <div className="px-16">
+          <h1 className="underline text-[70px] text-primary">TeCseréd</h1>
+          <h2 className="text-primary text-[39px]">Alkudj, ha tudsz!</h2>
+          <p className="text-white">
+            Magyarország első weboldala, ahol feleslegessé vált dolgaidat
+            cserélheted valami hasznosra
           </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+        <button
+          className="bg-[#b0d576] p-5 rounded-xl text-white text-bold mx-20 text-2xl my-5"
+          onClick={onClickHandler}
+        >
+          Vágjunk bele!
+        </button>
+      </div>
     </>
-  )
+  );
 }
