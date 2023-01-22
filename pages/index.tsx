@@ -36,10 +36,14 @@ const Page: NextPageWithLayout = () => {
         </div>
 
         <div className="px-16">
-          <h1 className="underline text-[70px] text-primary">TeCseréd</h1>
-          <h2 className="text-primary text-[39px]">Alkudj, ha tudsz!</h2>
-          <p className="text-white">
-            Magyarország első weboldala, ahol feleslegessé vált dolgaidat
+          <h1 className="underline text-[8rem] text-primary text-bold">
+            TeCseréd
+          </h1>
+          <h2 className="text-primary text-[4rem]">Alkudj, ha tudsz!</h2>
+          <p className="text-white text-3xl">
+            Magyarország első weboldala,
+            <br /> ahol feleslegessé vált dolgaidat
+            <br />
             cserélheted valami hasznosra
           </p>
         </div>
@@ -49,6 +53,10 @@ const Page: NextPageWithLayout = () => {
         >
           Vágjunk bele!
         </button>
+        <img
+          src="TECSERÉD_csávesz.svg"
+          className="absolute right-[8%] top-[24%] w-[40%]"
+        />
       </div>
     </>
   );
