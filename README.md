@@ -1,4 +1,2 @@
-TeCsered.hu általános első demójának kódja
-
-további demók:
-demo2: full user regisztráció és login
+## Egy csere-bere oldal demója
+Version: v0.2
